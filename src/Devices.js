@@ -4,7 +4,7 @@ function Devices() {
 
     return (
         <div>
-
+            Devices
         </div>
     )
 }

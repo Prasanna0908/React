@@ -1,9 +1,18 @@
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+
+import Home from './Home'
 // import Sidebar from './Sidebar'
 // import Main './Main'
 
 import './App.css';
+import Devices from './Devices';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
@@ -18,7 +27,14 @@ function App() {
       </div>
 
       <div className="i3">
-        <h1>jksdfbvhrjfv rejgwjr fgwkjrgbjwe fwejfbqhj</h1>
+
+        <Router>
+          <Route path='/Home' component={Home} />
+
+
+          <Route path='/Devices' component={Devices} />
+
+        </Router>
       </div>
 
     </div>

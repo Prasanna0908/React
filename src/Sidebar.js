@@ -10,12 +10,14 @@ import {
 } from "react-router-dom";
 
 import Devices from './Devices'
+import Home from './Home'
 
 
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 function Sidebar() {
+    let to;
 
     return (
 
@@ -24,14 +26,22 @@ function Sidebar() {
                 <React.Fragment>
                     <SideNav
                         onSelect={(selected) => {
-                            const to = '/' + selected;
+                            to = '/' + selected;
                             if (location.pathname !== to) {
-                                history.push(to);
+
+
+                                { history.push(to) }
+
+                                <Devices />
+
+                                { console.log(to) }
+
                             }
                         }}
                     >
                         <SideNav.Toggle />
                         <SideNav.Nav defaultSelected="home">
+
                             <NavItem eventKey="home">
                                 <NavIcon>
                                     <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
@@ -53,7 +63,8 @@ function Sidebar() {
                     <main>
                         {/* <Route path="/" exact component={props => <RootComponent />} /> */}
                         {/* <Route path="/home" component={props => <Home />} /> */}
-                        <Route path="/devices" component={props => <Devices />} />
+                        {/* <Route path="/devices" component={props => <Devices />} /> */}
+
                     </main>
                 </React.Fragment>
             )}

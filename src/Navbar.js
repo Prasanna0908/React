@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../src/Images/care.png'
 
 
+
 function Navbar() {
     return (
         <div>
